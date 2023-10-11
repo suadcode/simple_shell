@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+extern (char **environ);
+
 char *get_new_line(void);
 
 
