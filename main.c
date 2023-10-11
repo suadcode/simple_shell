@@ -12,12 +12,12 @@ int main(int argc, char **argv)
 	char **cmd_nw_ln = NULL;
 	int type = 0, ndx = 0;
 
-	while (true)
+	while (1)
 	{
 		new_line = get_new_line();
 		if (new_line == NULL)
 		{
-			if (is_ty(STDIN_FILENO))
+			if (isatty(STDIN_FILENO))
 			{
 				write(STDOUT_FILENO, "\n", 1);
 			}
@@ -31,4 +31,5 @@ int main(int argc, char **argv)
 		}
 		type = shell_excute(cmd_nw_ln, argv, ndx);
 	}
+	return (type);
 }
