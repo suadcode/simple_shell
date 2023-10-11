@@ -38,6 +38,7 @@
 extern char **environ;
 
 char *get_new_line(void);
+int main(int argc, char **argv);
 
 
 #endif
