@@ -39,6 +39,10 @@ extern char **environ;
 
 char *get_new_line(void);
 int main(int argc, char **argv);
+char **check_tokenizer(char *new_line);
+void fr_ar(char **arr);
+int shell_excute(char **sh_arr, char **argv);
+function betty_checks(void);
 
 
 #endif

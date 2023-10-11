@@ -10,7 +10,7 @@ char *get_new_line(void)
 	size_t lngth = 0;
 	ssize_t nmbr;
 
-	if (is_ty(STDIN_FILENO))
+	if (isatty(STDIN_FILENO))
 	{
 		write(STDOUT_FILENO, "$ ", 2);
 	}
