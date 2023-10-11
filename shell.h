@@ -3,6 +3,7 @@
 
 #define STDIN_FILENO
 #define STDOUT_FILENO
+#define dlmtr ""
 
 #include <stddef.h>
 #include <stdio.h>
