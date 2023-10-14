@@ -44,6 +44,6 @@ char **check_tokenizer(char *new_line);
 void fr_ar(char **arr);
 int shell_excute(char **sh_arr, char **argv);
 function betty_checks(void);
-
+char *str_cat(char *dest, char *sorc)
 
 #endif
