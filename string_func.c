@@ -23,3 +23,24 @@ char *str_cat(char *dest, char *sorc)
     dest[d] = '\0';
     return (dest);
 }
+
+/**
+ * str_comp - compare the values of a string
+ * @s1: first compare string
+ * @s2: second compare  string
+ * Return: 0
+ */
+
+int str_comp(char *s1, char *s2)
+{
+    int a;
+
+    for (a = 0; s1[a] != '\0' && s2[a] != '\0'; a++)
+    {
+        if (s1[a] != s2[a]) 
+        {
+            return ((int)s1[a] - s2[a]);
+        }
+    }
+    return (0);
+}
