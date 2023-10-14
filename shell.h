@@ -48,6 +48,7 @@ char *str_cat(char *dest, char *sorc);
 int str_comp(char *s1, char *s2);
 int str_len(char *s);
 size_t str_tocmp(char *s1, char *s2, size_t num);
+char *str_copy(char *dest, char *sorc);
 
 
 #endif

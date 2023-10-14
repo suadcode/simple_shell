@@ -83,3 +83,23 @@ size_t str_tocmp(char *s1, char *s2, size_t num)
     }
     return (0);
 }
+
+/**
+ * str_copy - copies the string pointed to by sorc into dest
+ * @dest: destination of copy
+ * @src: source of copy
+ * Return: dest
+ */
+
+char *str_copy(char *dest, char *sorc)
+{
+    int i = 0;
+
+    while (*(sorc + i) != '\0') {
+        *(dest + i) = *(sorc + i);
+        ++i;
+    }
+    *(dest + i) = *(sorc + i);
+
+    return (dest);
+}
