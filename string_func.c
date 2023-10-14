@@ -44,3 +44,20 @@ int str_comp(char *s1, char *s2)
     }
     return (0);
 }
+
+/**
+ * str_len copies the string pointed to by sorc into dest
+ * @s: A pointer
+ * Return: char a pointer to dest
+ */
+
+int str_len(char *s)
+{
+    int char = 0;
+
+    while (*(s + char) != '\0') {
+        char++;
+    }
+
+    return (char);
+}
