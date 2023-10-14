@@ -5,7 +5,7 @@
 #define STDOUT_FILENO
 #define dlmtr ""
 #define _GNU_SOURCE
-#define _POSIX_C_SOURCE 200809L 
+#define _POSIX_C_SOURCE 200809L
 
 #include <stddef.h>
 #include <string.h>
