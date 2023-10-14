@@ -61,3 +61,25 @@ int str_len(char *s)
 
     return (char);
 }
+
+/**
+ * str_tocmp -  function that compares two strings.
+ * @s1: first compare string
+ * @s2: second compare string
+ * @num: number of characters
+ * Return: result
+ */
+
+size_t str_tocmp(char *s1, char *s2, size_t num)
+{
+    size_t i, j;
+
+    for (j = 0; s1[j] != '\0' && j < n; j++) {
+        i = s1[j] - s2[j];
+
+        if (i != 0) {
+            return (i);
+        }
+    }
+    return (0);
+}
