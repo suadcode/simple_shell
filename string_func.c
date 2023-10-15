@@ -46,7 +46,6 @@ int str_comp(char *s1, char *s2)
 	}
 	return (0);
 }
-
 /**
  * str_len - copies the string pointed to by sorc into dest
  * @s: A pointer
@@ -55,14 +54,14 @@ int str_comp(char *s1, char *s2)
 
 int str_len(char *s)
 {
-	int char = 0;
+	int chr = 0;
 
-	while (*(s + char) != '\0')
+	while (*(s + chr) != '\0')
 	{
-	char++;
+	chr++;
 	}
 
-	return (char);
+	return (chr);
 }
 
 /**
@@ -77,7 +76,7 @@ size_t str_tocmp(char *s1, char *s2, size_t num)
 {
 	size_t i, j;
 
-	for (j = 0; s1[j] != '\0' && j < n; j++)
+	for (j = 0; s1[j] != '\0' && j < num; j++)
 	{
 	i = s1[j] - s2[j];
 
