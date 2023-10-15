@@ -26,7 +26,7 @@ void fr_ar(char **arr)
 * @argv: argument vector
 * Return: return
 */
-int shell_excute(char **sh_arr, char **argv)
+int shell_execute(char **sh_arr, char **argv)
 {
 	pid_t scnd;
 	int type;

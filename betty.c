@@ -1,3 +1,4 @@
+#include "shell.h"
 /*
 *  This function checks Betty passed
 * Args: None
@@ -12,9 +13,9 @@ function betty_checks(void)
 betty_check_result = $(betty check)
 
 if [[$betty_check_result == "Passed"]];
-echo 0
+echo 0;
 else
-echo 1
+echo 1;
 }
 
-betty_checks
+betty_checks;

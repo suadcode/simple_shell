@@ -27,6 +27,7 @@
 
 
 #define BUFFER_SIZE 1024
+#define BUF_FLUSH -1
 #define MAX_TOkENS 1024
 #define PROMPT "$ "
 #define MAX_ARGS 1024
@@ -41,8 +42,9 @@ char *get_new_line(void);
 int main(int argc, char **argv);
 char **check_tokenizer(char *new_line);
 void fr_ar(char **arr);
-int shell_excute(char **sh_arr, char **argv);
-function betty_checks(void);
+int shell_execute(char **sh_arr, char **argv);
+char *get_path_handled(char *pth);
+
 
 
 #endif

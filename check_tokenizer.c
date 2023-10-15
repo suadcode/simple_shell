@@ -22,7 +22,7 @@ char **check_tokenizer(char *new_line)
 	{
 		fr_ar(pass);
 		return (NULL);
-		fr_ar(line);
+		fr_ar(new_line);
 	}
 	while (tkn)
 	{
@@ -30,7 +30,7 @@ char **check_tokenizer(char *new_line)
 		tkn = strtok(NULL, dlmtr);
 	}
 	fr_ar(pass), pass = NULL;
-	cmd_nw_ln = malloc(sizeof(cha *) * (nmbr + 1));
+	cmd_nw_ln = malloc(sizeof(char *) * (nmbr + 1));
 	if (!cmd_nw_ln)
 	{
 		fr_ar(new_line);

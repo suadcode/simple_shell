@@ -14,11 +14,11 @@ char *get_new_line(void)
 	{
 		write(STDOUT_FILENO, "$ ", 2);
 	}
-	nmbr = get_new_line(&new_line, &lngth, stdin);
+	nmbr = getline(&new_line, &lngth, stdin);
 	if (nmbr == -1)
 	{
 		free(new_line);
 		return (NULL);
 	}
-	return (NULL);
+	return (new_line);
 }

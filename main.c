@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 		{
 			continue;
 		}
-		type = shell_excute(cmd_nw_ln, argv, ndx);
+		type = shell_execute(cmd_nw_ln, argv, ndx);
 	}
 	return (type);
 }
