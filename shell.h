@@ -43,7 +43,6 @@ char *get_new_line(void);
 int main(int argc, char **argv);
 char **check_tokenizer(char *new_line);
 void fr_ar(char **arr);
-<<<<<<< HEAD
 int shell_execute(char **sh_arr, char **argv);
 char *get_path_handled(char *pth);
 
@@ -55,7 +54,6 @@ int str_comp(char *s1, char *s2);
 int str_len(char *s);
 size_t str_tocmp(char *s1, char *s2, size_t num);
 char *str_copy(char *dest, char *sorc);
->>>>>>> fc456f2eb6e2aa1f32f5955aa16b9a2ba9d60c5c
 
 
 #endif
