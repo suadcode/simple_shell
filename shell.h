@@ -54,5 +54,15 @@ int str_len(char *s);
 size_t str_tocmp(char *s1, char *s2, size_t num);
 char *str_copy(char *dest, char *sorc);
 char *_strncat(char *dest, char *src, int n);
+char *_strchr(char *str, char chr);
+
+
+
+
+
+
+
+
+
 
 #endif
