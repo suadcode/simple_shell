@@ -7,13 +7,14 @@
  */
 char *_strchr(char *str, char chr)
 {
-	do
+	while (*str++ != '\0')
 	{
 		if (*str == chr)
 		{
 			return (str);
 		}
-	} while (*str++ != '\0');
+		str++;
+	}
 	return (NULL);
 }
 /**
@@ -93,12 +94,13 @@ void _puts(char *str)
  */
 int _putchar(char c)
 {
-	static int i = 0;
+	static int i;
 	static char buf[WRITE_BUF_SIZE];
 
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
 		write(1, buf, i);
+		i = 0;
 	}
 	if (c != BUF_FLUSH)
 	{

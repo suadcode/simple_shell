@@ -3,7 +3,7 @@
  * get_path_handled - handle path
  * @pth: the path command
  * Return: return (entire_path)
-*/
+ */
 char *get_path_handled(char *pth)
 {
 	char *mk, *cmd_pth, *entire_path = NULL;
@@ -18,12 +18,10 @@ char *get_path_handled(char *pth)
 			mk = malloc(sizeof(char) * (n + 1));
 			for (int i = 0; i < n; i++)
 				mk[i] = pth[i];
-			mk[n] = '\0';
-			cmd_pth = malloc(sizeof(char) * (n + 1));
+			mk[n] = '\0', cmd_pth = malloc(sizeof(char) * (n + 1));
 			for (int i = 0; i < n; i++)
 				cmd_pth[i] = pth[i];
-			cmd_pth[n] = '\0';
-			psd.path = mk, psd.cmd_path = cmd_pth, psd.next = NULL;
+			cmd_pth[n] = '\0', psd.path = mk, psd.cmd_path = cmd_pth, psd.next = NULL;
 			if (entire_path == NULL)
 				entire_path = malloc(sizeof(char) * (n + 1));
 			else
@@ -42,9 +40,7 @@ char *get_path_handled(char *pth)
 	}
 	if (cmd_pth)
 	{
-		_strcat(cmd_pth, mk);
-		_strcat(cmd_pth, "/");
-		_strcat(cmd_pth, pth);
+		_strcat(cmd_pth, mk), _strcat(cmd_pth, "/"), _strcat(cmd_pth, pth);
 	}
 	if (passed(cmd_pth, &psd) == 0)
 	{
