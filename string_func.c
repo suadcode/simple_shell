@@ -23,7 +23,6 @@ char *str_cat(char *dest, char *sorc)
 	dest[d] = '\0';
 	return (dest);
 }
-
 /**
  * str_comp - compare the values of a string
  * @s1: first compare string
@@ -45,40 +44,22 @@ int str_comp(char *s1, char *s2)
 }
 /**
  * str_len - copies the string pointed to by sorc into dest
- * @s: A pointer
+ * @str: A pointer
  * Return: char a pointer to dest
  */
-int str_len(char *s)
+int str_len(char *str)
 {
 	int chr = 0;
 
-	while (*(s + chr) != '\0')
+	if (!str)
+	{
+		return (0);
+	}
+	while (*(str++) != '\0')
 	{
 		chr++;
 	}
 	return (chr);
-}
-/**
- * str_tocmp -  function that compares two strings.
- * @s1: first compare string
- * @s2: second compare string
- * @num: number of characters
- * Return: result
- */
-size_t str_tocmp(char *s1, char *s2, size_t num)
-{
-	size_t i, j;
-
-	for (j = 0; s1[j] != '\0' && j < num; j++)
-	{
-		i = s1[j] - s2[j];
-
-		if (i != 0)
-		{
-			return (i);
-		}
-	}
-	return (0);
 }
 /**
  * str_copy - copies the string pointed to by sorc into dest
