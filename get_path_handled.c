@@ -39,15 +39,12 @@ char *get_path_handled(char *pth)
 		cmd_pth = malloc(_strlen(mk) + _strlen(pth) + 2);
 	}
 	if (cmd_pth)
-	{
 		_strcat(cmd_pth, mk), _strcat(cmd_pth, "/"), _strcat(cmd_pth, pth);
-	}
+
 	if (passed(cmd_pth, &psd) == 0)
-	{
-		free(entire_path);
-		return (cmd_pth);
-		free(cmd_pth), cmd_pth = NULL, mk = strtok(NULL, ":");
-	}
+		free(entire_path), return (cmd_pth);
+	free(cmd_pth), cmd_pth = NULL, mk = strtok(NULL, ":");
+
 	free(entire_path);
 	return (NULL);
 }
