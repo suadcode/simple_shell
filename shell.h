@@ -55,7 +55,10 @@ size_t str_tocmp(char *s1, char *s2, size_t num);
 char *str_copy(char *dest, char *sorc);
 char *_strncat(char *dest, char *src, int n);
 char *_strchr(char *str, char chr);
-
+int _strlen(char *str);
+int _strcmp(char *str1, char *str2);
+char *starts_with(const char *haystack, const char *needle);
+char *_strcat(char *dest, char *src);
 
 
 
