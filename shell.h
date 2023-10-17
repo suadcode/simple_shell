@@ -59,6 +59,9 @@ int _strlen(char *str);
 int _strcmp(char *str1, char *str2);
 char *starts_with(const char *haystack, const char *needle);
 char *_strcat(char *dest, char *src);
+char *_strdup(const char *str);
+void _puts(char *str);
+int _putchar(char c);
 
 
 
