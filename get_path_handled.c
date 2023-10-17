@@ -6,14 +6,15 @@
  */
 char *get_path_handled(char *pth)
 {
+	int n;
 	char *mk, *cmd_pth, *entire_path = NULL;
-	struct passed psd;
+	struct pssd psd;
 
 	for (n = 0; pth[n]; n++)
 	{
 		if (pth[n] == '/')
 		{
-			if (passed(pth, &psd) == 0)
+			if (pssd(pth, &psd) == 0)
 				return (strdup(pth));
 		}
 		else
@@ -30,7 +31,7 @@ char *get_path_handled(char *pth)
 	if (cmd_pth)
 		_strcat(cmd_pth, mk), _strcat(cmd_pth, "/"), _strcat(cmd_pth, pth);
 
-	if (passed(cmd_pth, &psd) == 0)
+	if (pssd(cmd_pth, &psd) == 0)
 		free(entire_path);
 	return (cmd_pth);
 	free(cmd_pth), cmd_pth = NULL, mk = strtok(NULL, ":");
