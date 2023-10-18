@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /*
  *  This function checks Betty passed
  * Args: None
