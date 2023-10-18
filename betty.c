@@ -21,4 +21,5 @@ else
 echo 1;
 }
 
-betty_checks
+betty_checks()
+
