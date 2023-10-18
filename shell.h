@@ -3,9 +3,11 @@
 
 #define STDIN_FILENO
 #define STDOUT_FILENO
+#define STDERR_FILENO 2
 #define dlmtr ""
 #define _GNU_SOURCE
 #define _POSIX_C_SOURCE 200809L
+#define WRITE_BUF_SIZE 1024
 
 #include <stddef.h>
 #include <string.h>
@@ -58,5 +60,9 @@ char *_strcat(char *dest, char *src);
 char *_strdup(const char *str);
 void _puts(char *str);
 int _putchar(char c);
+
+char *_itoa(int n);
+void print_error(char *value, char *cmnd, int ndx);
+void rev_str(char *str, int lnth);
 
 #endif

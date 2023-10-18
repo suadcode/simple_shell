@@ -8,14 +8,15 @@
  *   0  passed
  *   1  not passed
  */
-int *betty_checks(void)
+int betty_checks(void)
 {
-    char *betty_check_result = betty_checks;
+    char *expected_result = "Passed";
+    char *actual_result = "checked";
+    int result;
 
-    if (str_comp(betty_checks, "Passed") == 0)
-        _putchar('0\n');
-    else
-        _putchar('1\n');
+    result = str_comp(actual_result, expected_result);
 
-    return (0);
+    printf("Result: %d\n", result);
+
+    return (result);
 }
