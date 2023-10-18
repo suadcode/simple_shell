@@ -21,7 +21,7 @@ void fr_ar(char **arr)
 	arr = NULL;
 }
 /**
- * shell_excute - excute shell
+ * shell_execute - execute shell
  * @sh_arr: arrays of shell
  * @argv: argument vector
  * Return: return

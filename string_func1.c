@@ -2,6 +2,7 @@
 /**
  * rev_str - reverse string
  * @str: string
+ * @lnth: length
  * Return: no return
 */
 void rev_str(char *str, int lnth)
