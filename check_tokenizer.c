@@ -19,7 +19,7 @@ char **check_tokenizer(char *new_line)
         tkn = strtok(new_line, dlmtr);
         pass = _strdup(new_line);
         if (tkn == NULL) {
-                fr_ar(pass);
+                fr_ar(pass); // Free the pass variable.
                 return (NULL);
         }
 
@@ -27,8 +27,6 @@ char **check_tokenizer(char *new_line)
                 nmbr++;
                 tkn = strtok(NULL, dlmtr);
         }
-
-        fr_ar(pass); // Free the pass variable.
 
         cmd_nw_ln = malloc(sizeof(char *) * (nmbr + 1));
         if (!cmd_nw_ln) {
@@ -47,6 +45,8 @@ char **check_tokenizer(char *new_line)
         cmd_nw_ln[i] = NULL;
         return (cmd_nw_ln);
 }
-if (!cmd_nw_ln) {
+
+if (!cmd_nw_ln)
+{
         return (NULL);
 }
