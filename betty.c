@@ -1,4 +1,6 @@
 #include "shell.h"
+
+
 /*
 *  This function checks Betty passed
 * Args: None
@@ -7,6 +9,8 @@
 *   0  passed
 *   1  not passed
 */
+
+
 function betty_checks(void)
 {
 
@@ -18,4 +22,4 @@ else
 echo 1;
 }
 
-betty_checks;
+betty_checks
