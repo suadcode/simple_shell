@@ -2,12 +2,11 @@
 
 
 /*
-*  This function checks Betty passed
+* This function checks if Betty passed
 * Args: None
-*
 * Returns:
-*   0  passed
-*   1  not passed
+*   0 if passed
+*   1 if not passed
 */
 
 
