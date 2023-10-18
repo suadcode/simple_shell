@@ -3,7 +3,7 @@
  * fr_ar - function to free array
  * @arr: array to be free
  * Return: no return
-*/
+ */
 void fr_ar(char **arr)
 {
 	int x = 0;
@@ -21,11 +21,11 @@ void fr_ar(char **arr)
 	arr = NULL;
 }
 /**
-* shell_excute - excute shell
-* @sh_arr: arrays of shell
-* @argv: argument vector
-* Return: return
-*/
+ * shell_excute - excute shell
+ * @sh_arr: arrays of shell
+ * @argv: argument vector
+ * Return: return
+ */
 int shell_execute(char **sh_arr, char **argv)
 {
 	pid_t scnd;
