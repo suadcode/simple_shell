@@ -26,7 +26,6 @@
 #include <limits.h>
 #include <fcntl.h>
 
-
 #define BUFFER_SIZE 1024
 #define BUF_FLUSH -1
 #define MAX_TOkENS 1024
@@ -36,7 +35,6 @@
 #define PATH_SEPARATOR ":"
 #define PATH_MAX_LENGTH 4096
 
-
 extern char **environ;
 
 char *get_new_line(void);
@@ -45,30 +43,20 @@ char **check_tokenizer(char *new_line);
 void fr_ar(char **arr);
 int shell_execute(char **sh_arr, char **argv);
 char *get_path_handled(char *pth);
-
+char *_getenv(const char *value);
 int shell_excute(char **sh_arr, char **argv);
-function betty_checks(void);
+int betty_checks(void);
 char *str_cat(char *dest, char *sorc);
 int str_comp(char *s1, char *s2);
-int str_len(char *s);
+int str_len(char *str);
 size_t str_tocmp(char *s1, char *s2, size_t num);
 char *str_copy(char *dest, char *sorc);
 char *_strncat(char *dest, char *src, int n);
 char *_strchr(char *str, char chr);
-int _strlen(char *str);
-int _strcmp(char *str1, char *str2);
 char *starts_with(const char *haystack, const char *needle);
 char *_strcat(char *dest, char *src);
 char *_strdup(const char *str);
 void _puts(char *str);
 int _putchar(char c);
-
-
-
-
-
-
-
-
 
 #endif
