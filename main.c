@@ -7,10 +7,10 @@
 */
 int main(int argc, char **argv)
 {
-	(void) argc;
 	char *new_line = NULL;
 	char **cmd_nw_ln = NULL;
 	int type = 0, ndx = 0;
+	(void)argc;
 
 	while (1)
 	{
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 		{
 			continue;
 		}
-		type = shell_execute(cmd_nw_ln, argv, ndx);
+		type = shell_execute(cmd_nw_ln, argv);
 	}
 	return (type);
 }

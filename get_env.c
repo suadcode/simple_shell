@@ -1,11 +1,10 @@
 #include "shell.h"
-
 /**
  * _getenv - get environ
  * @value: the string env
  * Return: return(NULL)
- */
-char *_getenv(const char *value)
+*/
+char *_getenv(char *value)
 {
 	char *pass;
 	char *env;
