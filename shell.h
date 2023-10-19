@@ -4,7 +4,7 @@
 #define STDIN_FILENO
 #define STDOUT_FILENO
 #define STDERR_FILENO 2
-#define dlmtr ""
+#define DLMTR " \t\n"
 #define _GNU_SOURCE
 #define _POSIX_C_SOURCE 200809L
 #define WRITE_BUF_SIZE 1024

@@ -32,7 +32,6 @@ int shell_execute(char **sh_arr, char **argv)
 	int type;
 
 	scnd = fork();
-
 	if (scnd == 0)
 	{
 		if (execve(sh_arr[0], sh_arr, environ) == -1)
