@@ -36,7 +36,7 @@ int shell_execute(char **sh_arr, char **argv)
 	{
 		if (execve(sh_arr[0], sh_arr, environ) == -1)
 		{
-			perror(argv[0]), fr_ar(sh_arr), exit(0);
+			perror(argv[0]), fr_ar(sh_arr), exit(127);
 		}
 		else
 		{
