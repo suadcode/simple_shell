@@ -3,6 +3,7 @@
  * main - main shell function
  * @argc: argument count
  * @argv: argument vector
+ * @env: environ
  * Return: return
 */
 int main(int argc, char **argv, char **env)
@@ -11,6 +12,7 @@ int main(int argc, char **argv, char **env)
 	char **cmd_nw_ln = NULL;
 	int type = 0, ndx = 0;
 	(void)argc;
+	(void)env;
 
 	while (1)
 	{
@@ -31,7 +33,7 @@ int main(int argc, char **argv, char **env)
 		}
 		if (is_builtin(cmd_nw_ln[0]))
 		{
-			get_builtin(cmd_mw_ln, argv, &type, ndx)
+			get_builtin(cmd_nw_ln, argv, &type, ndx);
 		}
 		else
 		{

@@ -24,6 +24,7 @@ void fr_ar(char **arr)
  * shell_execute - execute shell
  * @sh_arr: arrays of shell
  * @argv: argument vector
+ * @ndx: index
  * Return: return
  */
 int shell_execute(char **sh_arr, char **argv, int ndx)
