@@ -7,40 +7,43 @@
  */
 char *str_cat(char *dest, char *sorc)
 {
-	int d = 0;
-	int s = 0;
+	char *pass = dest;
 
-	while (dest[d] != '\0')
+	while (*pass)
 	{
-		d++;
+		pass++;
 	}
-	while (sorc[s] != '\0')
+	while (*sorc)
 	{
-		dest[d] = sorc[s];
-		d++;
-		s++;
+		*pass = *sorc;
+		pass++;
+		sorc++;
 	}
-	dest[d] = '\0';
+	*pass = '\0';
 	return (dest);
 }
 /**
  * str_comp - compare the values of a string
  * @s1: first compare string
  * @s2: second compare  string
- * Return: 0
+ * Return: cmpr
  */
 int str_comp(char *s1, char *s2)
 {
-	int a;
+	int cmpr;
 
-	for (a = 0; s1[a] != '\0' && s2[a] != '\0'; a++)
+	cmpr = (int)*s1 - (int)*s2;
+	while (*s1)
 	{
-		if (s1[a] != s2[a])
+		if (*s1 != *s2)
 		{
-			return ((int)s1[a] - s2[a]);
+			break;
 		}
+		s1++;
+		s2++;
+		cmpr = ((int)*s1 - (int)*s2);
 	}
-	return (0);
+	return (cmpr);
 }
 /**
  * str_len - copies the string pointed to by sorc into dest
@@ -49,17 +52,17 @@ int str_comp(char *s1, char *s2)
  */
 int str_len(char *str)
 {
-	int chr = 0;
+	int lnth = 0;
 
 	if (!str)
 	{
-		return (0);
+		return (NULL);
 	}
-	while (*(str++) != '\0')
+	while (str[lnth])
 	{
-		chr++;
+		lnth++;
 	}
-	return (chr);
+	return (lnth);
 }
 /**
  * str_copy - copies the string pointed to by sorc into dest
@@ -71,13 +74,12 @@ char *str_copy(char *dest, char *sorc)
 {
 	int i = 0;
 
-	while (*(sorc + i) != '\0')
+	while (sorc[i])
 	{
-		*(dest + i) = *(sorc + i);
+		dest[i] = sorc[i];
 		i++;
 	}
-	*(dest + i) = *(sorc + i);
-
+	dest[i] = '\0';
 	return (dest);
 }
 /**

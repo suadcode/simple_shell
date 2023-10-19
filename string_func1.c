@@ -7,17 +7,19 @@
 */
 void rev_str(char *str, int lnth)
 {
-	int x;
+	int x = 0, z = (lnth - 1);
 	char pass;
 
 	while (str[lnth] != '\0')
 	{
 		lnth++;
 	}
-	while (x = 0, x < lnth / 2)
+	while (x < z)
 	{
 		pass = str[x];
-		str[x] = str[lnth - x - 1];
-		str[lnth - x - 1] = pass;
+		str[x] = str[z];
+		str[z] = pass;
+		x++;
+		z--;
 	}
 }

@@ -39,14 +39,16 @@
 
 extern char **environ;
 
+void fr_ar(char **arr);
+
+
 char *get_new_line(void);
-int main(int argc, char **argv);
+int main(int argc, char **argv, char **env);
 char **check_tokenizer(char *new_line);
 void fr_ar(char **arr);
-int shell_execute(char **sh_arr, char **argv);
+int shell_execute(char **sh_arr, char **argv, int ndx);
 char *get_path_handled(char *pth);
 char *_getenv(char *value);
-int shell_excute(char **sh_arr, char **argv);
 char *str_cat(char *dest, char *sorc);
 int str_comp(char *s1, char *s2);
 int str_len(char *str);
@@ -61,7 +63,15 @@ void _puts(char *str);
 int _putchar(char c);
 
 char *_itoa(int n);
+int pos_num(char *str);
+int _atoi(char *str);
 void print_error(char *value, char *cmnd, int ndx);
 void rev_str(char *str, int lnth);
+
+
+void print_env(char **bltn, int *type);
+void shell_exit(char **bltn, char **argv, int *type, int ndx);
+void get_builtin(char **bltn, char **argv, int *type, int ndx);
+int is_builtin(char *bltn);
 
 #endif

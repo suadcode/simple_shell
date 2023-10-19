@@ -49,3 +49,41 @@ char *_itoa(int n)
 	rev_str(buf, x);
 	return (_strdup(buf));
 }
+/**
+ * pos_num - check if number is positive
+ * @str: string
+ * Return: return (1)
+*/
+int pos_num(char *str)
+{
+	int n;
+
+	if (!str)
+	{
+		return (0);
+	}
+	for (n = 0; str[n]; n++)
+	{
+		if (str[n] < '0' || str[n] > '9')
+		{
+			return (0);
+		}
+	}
+	return (1);
+}
+/**
+ * _atoi - array to integer
+ * @str: string
+ * Return: return (num)
+*/
+int _atoi(char *str)
+{
+	int n, num = 0;
+
+	for (n = 0; str[n]; n++)
+	{
+		num *= 10;
+		num += (str[n] - '0');
+	}
+	return (num);
+}

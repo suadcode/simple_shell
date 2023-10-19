@@ -5,7 +5,7 @@
  * @argv: argument vector
  * Return: return
 */
-int main(int argc, char **argv)
+int main(int argc, char **argv, char **env)
 {
 	char *new_line = NULL;
 	char **cmd_nw_ln = NULL;
@@ -29,7 +29,14 @@ int main(int argc, char **argv)
 		{
 			continue;
 		}
-		type = shell_execute(cmd_nw_ln, argv);
+		if (is_builtin(cmd_nw_ln[0]))
+		{
+			get_builtin(cmd_mw_ln, argv, &type, ndx)
+		}
+		else
+		{
+			type = shell_execute(cmd_nw_ln, argv, ndx);
+		}
 	}
 	return (type);
 }
