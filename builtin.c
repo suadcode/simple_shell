@@ -8,7 +8,8 @@ int is_builtin(char *bltn)
 {
 	char *full_bltn[] = {
 		"exit", "env", "cd",
-		"setenv", "pwd", NULL
+		"setenv", "unsetenv",
+		"pwd", NULL
 	};
 	int b;
 

@@ -29,7 +29,7 @@ char *get_path_handled(char *pth)
 		cmd_pth = malloc(str_len(mk) + str_len(pth) + 2);
 		if (cmd_pth)
 		{
-			str_cat(cmd_pth, mk), str_cat(cmd_pth, "/"), str_cat(cmd_pth, pth);
+			str_copy(cmd_pth, mk), str_cat(cmd_pth, "/"), str_cat(cmd_pth, pth);
 			if (stat(cmd_pth, &st) == 0)
 			{
 				free(entire_path);

@@ -24,10 +24,11 @@ void fr_ar(char **arr)
  * shell_execute - execute shell
  * @sh_arr: arrays of shell
  * @argv: argument vector
+ * @environ: environ
  * @ndx: index
  * Return: return
  */
-int shell_execute(char **sh_arr, char **argv, int ndx)
+int shell_execute(char **sh_arr, char **argv, char **environ, int ndx)
 {
 	char *cmd_pth;
 	pid_t scnd;
@@ -45,6 +46,7 @@ int shell_execute(char **sh_arr, char **argv, int ndx)
 	{
 		if (execve(cmd_pth, sh_arr, environ) == -1)
 		{
+			perror("execve");
 			free(cmd_pth), cmd_pth = NULL;
 			fr_ar(sh_arr), exit(127);
 		}

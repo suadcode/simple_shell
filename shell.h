@@ -49,7 +49,7 @@ char *get_new_line(void);
 int main(int argc, char **argv, char **env);
 char **check_tokenizer(char *new_line);
 void fr_ar(char **arr);
-int shell_execute(char **sh_arr, char **argv, int ndx);
+int shell_execute(char **sh_arr, char **argv, char **environ, int ndx);
 char *get_path_handled(char *pth);
 char *_getenv(char *value);
 char *str_cat(char *dest, char *sorc);
@@ -80,7 +80,7 @@ int set_env(char ***env, char *var, char *val);
 int unset_env(char ***env, char *var);
 
 
-void change_variable(char *token, char *variable, char *value);
+void change_variable(char *token, char *var, char *val);
 void commands_execute(char **args);
 void parse_execute(char *value);
 
