@@ -73,5 +73,11 @@ void print_env(char **bltn, int *type);
 void shell_exit(char **bltn, char **argv, int *type, int ndx);
 void get_builtin(char **bltn, char **argv, int *type, int ndx);
 int is_builtin(char *bltn);
+int set_env(char ***env, const cahr *var, const char *val);
+int unset_env(char ***env, constchar *var);
+
+
+
+
 
 #endif
