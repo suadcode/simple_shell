@@ -43,14 +43,14 @@ char *starts_with(const char *haystack, const char *needle)
 char *_strdup(const char *str)
 {
 
-	int lnth = 0;
+	int x, lnth = 0;
 	char *ret;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	while (*str++)
+	while (str[lnth])
 	{
 		lnth++;
 	}
@@ -60,9 +60,9 @@ char *_strdup(const char *str)
 	{
 		return (NULL);
 	}
-	for (lnth++; lnth--;)
+	for (x = 0; x <= lnth; x++)
 	{
-		ret[lnth] = *--str;
+		ret[x] = str[x];
 	}
 	return (ret);
 }

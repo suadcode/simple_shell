@@ -6,16 +6,14 @@
 */
 char *_getenv(char *value)
 {
-	char *pass;
-	char *env;
-	char *var;
+	char *pass, *tok, *var, *env;
 	int v;
 
 	for (v = 0; environ[v]; v++)
 	{
 		pass = _strdup(environ[v]);
-		env = strtok(pass, "=");
-		if (str_comp(env, value) == 0)
+		tok = strtok(pass, "=");
+		if (str_comp(tok, value) == 0)
 		{
 			var = strtok(NULL, "\n");
 			env = _strdup(var);

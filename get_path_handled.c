@@ -16,9 +16,9 @@ char *get_path_handled(char *pth)
 		{
 			if (stat(pth, &st) == 0)
 				return (_strdup(pth));
-		}
-		else
+
 			return (NULL);
+		}
 	}
 	entire_path = _getenv("PATH");
 	if (entire_path == NULL)
@@ -36,8 +36,8 @@ char *get_path_handled(char *pth)
 				return (cmd_pth);
 			}
 			free(cmd_pth), cmd_pth = NULL;
+			mk = strtok(NULL, ":");
 		}
-		mk = strtok(NULL, ":");
 	}
 	free(entire_path);
 	return (NULL);
