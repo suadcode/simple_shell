@@ -5,6 +5,9 @@
 #define STDOUT_FILENO
 #define STDERR_FILENO 2
 #define DLMTR " \t\n"
+#define CMNDS " ;|&$#"
+#define MAX_TOKENS 100
+#define BUFFER_SIZE 1024
 #define _GNU_SOURCE
 #define _POSIX_C_SOURCE 200809L
 #define WRITE_BUF_SIZE 1024
@@ -73,11 +76,13 @@ void print_env(char **bltn, int *type);
 void shell_exit(char **bltn, char **argv, int *type, int ndx);
 void get_builtin(char **bltn, char **argv, int *type, int ndx);
 int is_builtin(char *bltn);
-int set_env(char ***env, const cahr *var, const char *val);
-int unset_env(char ***env, constchar *var);
+int set_env(char ***env, char *var, char *val);
+int unset_env(char ***env, char *var);
 
 
-
+void change_variable(char *token, char *variable, char *value);
+void commands_execute(char **args);
+void parse_execute(char *value);
 
 
 #endif
