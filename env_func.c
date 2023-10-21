@@ -21,31 +21,31 @@ int set_env(char ***env, char *var, char *val)
 		{
 			nwvr = malloc(str_len(var) + str_len(val) + 2);
 			if (!nwvr)
-			{
 				return (0);
-			}
 			sprintf(buffer, "%s=%s", var, val);
-			write(str_len(nwvr), buffer, str_len(buffer));
+			write(STDOUT_FILENO, buffer, str_len(buffer));
 			free(now[e]), now[e] = nwvr;
 			return (0);
 		}
 	}
-	for (e = 0; now && now[2] != NULL; e++)
+	for (e = 0; now && now[e] != NULL; e++)
 	{
-		new = realloc(new, (e + 2) * sizeof(char *));
+		new = realloc(new, (e + 1) * sizeof(char *));
 		if (!new)
-		{
 			return (0);
-		}
 		new[e] = now[e], free(new), new = NULL, fr_ar(&new[e]), new[e] = NULL;
 	}
-	new[e] = malloc(str_len(var) + str_len(val) + 2);
+	new[e] = realloc(new, (e + 2) * sizeof(char *));
 	if (!new)
+		return (0);
+	new[e] = malloc(str_len(var) + str_len(val) + 2);
+	if (!new[e])
 	{
+		free(new), new = NULL;
 		return (0);
 	}
 	sprintf(buffer, "%s=%s", var, val);
-	write(str_len(new[e]), buffer, str_len(buffer));
+	write(STDOUT_FILENO, buffer, str_len(buffer));
 	new[e + 1] = NULL, free(now), *env = new;
 	return (0);
 }
@@ -64,28 +64,23 @@ int unset_env(char ***env, char *var)
 	{
 		return (0);
 	}
-	for (e = 0; now[e] != NULL; e++)
+	for (e = 0, v = 0; now[e] != NULL; e++, v++)
 	{
 		if (str_comp(now[e], var) == 0 && now[e][str_len(var)] == '=')
 		{
-			for (v = 0; now[v] != NULL; v++)
-			{
-				if (e == v)
-				{
-					continue;
-				}
-				new = realloc(new, (v + 2) * sizeof(char *));
-				if (!new)
-				{
-					return (0);
-				}
-				new[v] = now[e];
-			}
-			new[v] = NULL;
-			fr_ar(&now[e]), now[e] = NULL, free(now), now = NULL;
-			*env = new;
-			return (1);
+			fr_ar(&now[e]);
+			now[e] = NULL;
+			continue;
 		}
+		new = realloc(new, (v + 2) * sizeof(char *));
+		if (!new)
+		{
+			return (0);
+		}
+		new[v] = now[e];
 	}
-	return (0);
+	new[v] = NULL;
+	fr_ar(&now[e]), now[e] = NULL, free(now), now = NULL;
+	*env = new;
+	return (1);
 }
